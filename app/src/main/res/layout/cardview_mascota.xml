@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMascota"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    card_view:cardCornerRadius="@dimen/radius_cv"
+    android:layout_marginBottom="@dimen/margin_cards">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgMascota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/descript_img"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pet1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_revl"
+            android:paddingTop="@dimen/padding_revl">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgHueso"
+                android:layout_width="@dimen/size_hueso"
+                android:layout_height="@dimen/size_hueso"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="@dimen/margin_datos"
+                android:layout_marginStart="@dimen/margin_datos"
+                android:src="@drawable/bone" />
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pet_1"
+                android:textSize="@dimen/size_text"
+                android:layout_toEndOf="@+id/imgHueso"
+                android:gravity="center_vertical"
+                android:layout_centerVertical="true"/>
+
+            <!--parte del huesito dorado-->
+            <TextView
+                android:id="@+id/tvContador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/imgContador"
+                android:gravity="center_vertical"
+                android:text="@string/contador"
+                android:textSize="@dimen/size_text"
+                android:layout_centerVertical="true"/>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgContador"
+                android:layout_width="@dimen/size_hueso"
+                android:layout_height="@dimen/size_hueso"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_datos"
+                android:layout_marginStart="@dimen/margin_datos"
+                android:src="@drawable/bone_g" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
