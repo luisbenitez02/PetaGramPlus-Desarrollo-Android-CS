@@ -3,4 +3,8 @@
     <string name="pet_1">Katty</string>
     <string name="contador">5</string>
     <string name="descript_img">Foto de Mascota</string>
+    <!--Strings del menu de opciones-->
+    <string name="menu_About">Acerca De</string>
+    <string name="menu_settings">Configuracion</string>
+    <string name="updates">Proximamente...</string>
 </resources>

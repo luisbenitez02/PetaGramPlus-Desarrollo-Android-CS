@@ -1,9 +1,13 @@
 package com.example.luisb.petagramplus;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,7 +35,38 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /*Para inicializar nuestro adaptador*/
+    /*Vamos a crear el menu de opciones (los tres puntitos)*/
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_opciones,menu);//le entregamos nuestro menu
+        return true;
+    }
+
+    /*Revisamos las opciones pulsadas en nuestro menu*/
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){//preguntamos el ID
+
+            case R.id.mAbout: //iniciaremos una actividad
+                //Intent intento = new Intent(this,FavoritosActivity.class);
+                //startActivity(intento);
+
+                Toast.makeText(this, getResources().getString(R.string.updates), Toast.LENGTH_SHORT).show();//mensaje de opcion proximamente disponible
+                break;
+
+            case R.id.mSettings:
+                Toast.makeText(this, getResources().getString(R.string.updates), Toast.LENGTH_SHORT).show();//mensaje de opcion proximamente disponible
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    /*Para inicializar nuestro adaptador
+        * Tomara el menu que creamos y lo inflara en la vista*/
     public  void inicializarAdaptador(){
         MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
         rvMascotas.setAdapter(adaptador);
