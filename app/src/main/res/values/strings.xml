@@ -7,4 +7,7 @@
     <string name="menu_About">Acerca De</string>
     <string name="menu_settings">Configuracion</string>
     <string name="updates">Proximamente...</string>
+    
+    <!--Menu action view (favoritos)-->
+    <string name="fav_action">Favoritos</string>
 </resources>

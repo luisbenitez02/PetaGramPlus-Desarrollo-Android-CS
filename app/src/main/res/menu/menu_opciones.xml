@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/mAbout"
         android:title="@string/menu_About"
         android:orderInCategory="2"></item>
@@ -8,4 +9,13 @@
     <item android:id="@+id/mSettings"
         android:title="@string/menu_settings"
         android:orderInCategory="1"></item>
+
+    <!--menu action view-->
+
+    <item android:id="@+id/mFavs"
+        android:title="@string/fav_action"
+        android:orderInCategory="1"
+        app:showAsAction="always"
+        android:icon="@drawable/fav"></item>
+    <!--app:showAsAction="always" define que este item aparezca como action view-->
 </menu>

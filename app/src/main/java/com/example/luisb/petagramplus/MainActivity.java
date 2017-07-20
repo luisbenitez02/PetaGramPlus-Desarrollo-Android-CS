@@ -60,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.mSettings:
                 Toast.makeText(this, getResources().getString(R.string.updates), Toast.LENGTH_SHORT).show();//mensaje de opcion proximamente disponible
                 break;
+
+            //Prguntemos si toca nuestro action view
+            case R.id.mFavs: //arranco la actividad
+                Intent i = new Intent(this, FavoritosActivity.class);
+                startActivity(i);
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -87,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         mascotas.add(new Mascota("Maite","11",R.drawable.pet6));
         mascotas.add(new Mascota("Pirlo","9",R.drawable.pet2));
         mascotas.add(new Mascota("Dani","12",R.drawable.pet3));
+        mascotas.add(new Mascota("Yaya","28",R.drawable.pet11));
 
     }
 }
