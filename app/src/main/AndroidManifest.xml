@@ -16,7 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FavoritosActivity"></activity>
+        <!--Actividad hija-->
+        <activity android:name=".FavoritosActivity"
+            android:parentActivityName=".MainActivity"
+            >
+            <!--sporte versiones menores a 4.0-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"><!--defino nuevamente la actividad padre-->
+
+            </meta-data>
+        </activity>
     </application>
 
 </manifest>

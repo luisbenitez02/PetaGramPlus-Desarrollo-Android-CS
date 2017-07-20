@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PetaGramPlus</string>
+    <string name="app_name">PetaGram+</string>
     <string name="pet_1">Katty</string>
     <string name="contador">5</string>
     <string name="descript_img">Foto de Mascota</string>

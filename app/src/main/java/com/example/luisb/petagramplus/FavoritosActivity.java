@@ -9,5 +9,8 @@ public class FavoritosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favoritos);
+
+        /*vamos a activar el funcionamiento del boton "atras"*/
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
