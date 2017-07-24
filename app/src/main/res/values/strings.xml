@@ -5,9 +5,17 @@
     <string name="descript_img">Foto de Mascota</string>
     <!--Strings del menu de opciones-->
     <string name="menu_About">Acerca De</string>
-    <string name="menu_settings">Configuracion</string>
+    <string name="menu_contacto">Contacto</string>
     <string name="updates">Proximamente...</string>
-    
+
     <!--Menu action view (favoritos)-->
     <string name="fav_action">Favoritos</string>
+
+    <!--Texto inputs-->
+    <string name="name">Nombre</string>
+    <string name="mail">Email</string>
+    <string name="message">Tu Mensaje</string>
+
+    <!--Boton-->
+    <string name="send">Enviar</string>
 </resources>

@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.luisb.petagramplus.pojo.Mascota;
+
 import java.util.ArrayList;
 
 /**

@@ -1,4 +1,4 @@
-package com.example.luisb.petagramplus;
+package com.example.luisb.petagramplus.pojo;
 
 /**
  * Created by luisb on 15/07/2017.

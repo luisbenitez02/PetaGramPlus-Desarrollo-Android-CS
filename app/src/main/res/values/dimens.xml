@@ -8,4 +8,6 @@
     <dimen name="padding_revl">4dp</dimen>
     <dimen name="card_margin_lados">8dp</dimen>
     <dimen name="margin_cards">12dp</dimen>
+    <!--margen de los inputs-->
+    <dimen name="margin_input">5dp</dimen>
 </resources>
