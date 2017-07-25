@@ -52,19 +52,24 @@
 
     </android.support.design.widget.TextInputLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/miButton"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="match_parent"
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/sendEmailButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="@string/send" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/margin_float"
+            android:layout_marginEnd="@dimen/margin_float"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:src="@drawable/send"
+            app:elevation="@dimen/elevation"
+            app:fabSize="normal" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

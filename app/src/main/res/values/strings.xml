@@ -13,7 +13,7 @@
 
     <!--Texto inputs-->
     <string name="name">Nombre</string>
-    <string name="mail">Email</string>
+    <string name="mail">Email (secundario)</string>
     <string name="message">Tu Mensaje</string>
 
     <!--Boton-->

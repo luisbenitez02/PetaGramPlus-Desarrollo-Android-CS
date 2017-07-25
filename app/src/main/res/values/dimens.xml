@@ -9,5 +9,8 @@
     <dimen name="card_margin_lados">8dp</dimen>
     <dimen name="margin_cards">12dp</dimen>
     <!--margen de los inputs-->
-    <dimen name="margin_input">5dp</dimen>
+    <dimen name="margin_input">6dp</dimen>
+    <!--margin boton flotante-->
+    <dimen name="margin_float">16dp</dimen>
+    <dimen name="elevation">6dp</dimen>
 </resources>
