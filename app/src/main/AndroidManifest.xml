@@ -28,7 +28,8 @@
 
             </meta-data>
         </activity>
-        <activity android:name=".ContactoActivity"></activity>
+        <activity android:name=".ContactoActivity" />
+        <activity android:name=".PerfilActivity"></activity>
     </application>
 
 </manifest>

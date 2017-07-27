@@ -13,4 +13,8 @@
     <!--margin boton flotante-->
     <dimen name="margin_float">16dp</dimen>
     <dimen name="elevation">6dp</dimen>
+    <!--Mi img de perfil-->
+    <dimen name="perfil_size">160dp</dimen>
+    <dimen name="misizetext">15sp</dimen>
+    <dimen name="margin_redes">2dp</dimen>
 </resources>

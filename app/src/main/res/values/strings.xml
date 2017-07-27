@@ -18,4 +18,33 @@
 
     <!--Boton-->
     <string name="send">Enviar</string>
+    <!--Perfil-->
+    <string name="name_perfil">Luis Benitez</string>
+    <string name="mensaje_perfil">Estudiante de Ingenieria en sistemas UNAD. Amante de
+    Android, el arroz con pollo y el deporte. PD: Soy bueno programando</string>
+    <string name="fb_perfil">/luisbenitez14</string>
+    <string name="tw_perfil">/untalbenitez</string>
+    <string name="ytb_perfil">/luixitop32</string>
+    <string name="out_perfil">luisbenitez_14@hotmail.com</string>
+    <string name="title_tec">Lenguajes y Tecnologias</string>
+    <!--Tecnologias-->
+    <string name="android">Android</string>
+    <string name="java">Java</string>
+    <string name="html">HTML5</string>
+    <string name="arduino">Arduino</string>
+    <string name="python">Python</string>
+    <string name="php">PHP</string>
+    <string name="github">Github</string>
+    <!--estudios-->
+    <string name="ing_sis">Universidad Nacional Abierta Y A Distancia - UNAD</string>
+    <string name="carrera">Ingenieria de Sistemas (En curso)</string>
+    <string name="espec">Especializacion en seguridad informatica (En curso)</string>
+    <string name="plata_online">Plataformas Online</string>
+    <string name="sena_1">Desarrollo con Java (SENA Sofia Plus)</string>
+    <string name="bcp">Desarrollo con Python (Apps.co)</string>
+    <string name="bcp_1">Desarollo para Android (Apps.co)</string>
+    <string name="bcp_2">Desarrollo de apps en HTML5 (Apps.co)</string>
+    <string name="bcp_3">Desarrollo HTML5 (Apps.co, UNAD, Platzi)</string>
+    <string name="c_1">Desarrollo con Node.js (MiriadaX)</string>
+    <string name="c_2">Carrera de programacion en Android (coursera)</string>
 </resources>

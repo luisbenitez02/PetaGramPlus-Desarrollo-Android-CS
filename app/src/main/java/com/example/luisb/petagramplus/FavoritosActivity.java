@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.luisb.petagramplus.adaptador.MascotaAdaptador;
 import com.example.luisb.petagramplus.pojo.Mascota;
 
 import java.util.ArrayList;

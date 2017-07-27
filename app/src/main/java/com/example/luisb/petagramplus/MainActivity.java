@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.luisb.petagramplus.adaptador.MascotaAdaptador;
 import com.example.luisb.petagramplus.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -53,10 +54,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){//preguntamos el ID
 
             case R.id.mAbout: //iniciaremos una actividad
-                //Intent intento = new Intent(this,FavoritosActivity.class);
-                //startActivity(intento);
-
-                Toast.makeText(this, getResources().getString(R.string.updates), Toast.LENGTH_SHORT).show();//mensaje de opcion proximamente disponible
+                Intent intento = new Intent(this,PerfilActivity.class);
+                startActivity(intento);
                 break;
 
             case R.id.mContact:
@@ -66,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
             //Prguntemos si toca nuestro action view
             case R.id.mFavs: //arranco la actividad
-                Intent intento = new Intent(this, FavoritosActivity.class);
-                startActivity(intento);
+                Intent i2 = new Intent(this, FavoritosActivity.class);
+                startActivity(i2);
                 break;
         }
 
