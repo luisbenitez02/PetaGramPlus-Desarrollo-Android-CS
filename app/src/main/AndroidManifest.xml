@@ -28,8 +28,29 @@
 
             </meta-data>
         </activity>
-        <activity android:name=".ContactoActivity" />
-        <activity android:name=".PerfilActivity"></activity>
+
+        <activity
+            android:name=".ContactoActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- sporte versiones menores a 4.0 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"> <!-- defino nuevamente la actividad padre -->
+
+            </meta-data>
+        </activity>
+
+        <activity android:name=".PerfilActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- sporte versiones menores a 4.0 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"> <!-- defino nuevamente la actividad padre -->
+
+            </meta-data>
+        </activity>
     </application>
 
 </manifest>

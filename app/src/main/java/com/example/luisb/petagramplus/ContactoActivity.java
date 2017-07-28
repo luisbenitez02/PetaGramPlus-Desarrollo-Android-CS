@@ -19,6 +19,9 @@ public class ContactoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto);
 
+         /*vamos a activar el funcionamiento del boton "atras"*/
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         /*asocio los elementos con las vistas*/
 
         editNombre = (EditText) findViewById(R.id.inputName);
