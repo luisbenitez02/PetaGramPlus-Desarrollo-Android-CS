@@ -6,9 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.example.luisb.petagramplus.FavoritosActivity">
 
+    <include android:id="@+id/miToolbar"
+        layout="@layout/mitoolbar">
+
+    </include>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvFavMascotas"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/miToolbar" />
 
 </RelativeLayout>

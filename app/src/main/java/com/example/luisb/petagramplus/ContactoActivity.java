@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 
@@ -13,11 +14,20 @@ public class ContactoActivity extends AppCompatActivity {
     private EditText editNombre;
     private EditText editMailSecond;
     private EditText editMensaje;
+    Toolbar miToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto);
+
+        miToolbar = (Toolbar) findViewById(R.id.miToolbar);
+        setSupportActionBar(miToolbar);
+        getSupportActionBar().setTitle(getResources().getString(R.string.contacto));
+
+        /*vamos a activar el funcionamiento del boton "atras"*/
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // Activamos el Boton de subir
 
          /*vamos a activar el funcionamiento del boton "atras"*/
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

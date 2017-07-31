@@ -17,4 +17,8 @@
     <dimen name="perfil_size">160dp</dimen>
     <dimen name="misizetext">15sp</dimen>
     <dimen name="margin_redes">2dp</dimen>
+    <!--CardView huesito chico-->
+    <dimen name="huesito">20dp</dimen>
+    <dimen name="size_chico">18sp</dimen>
+    <dimen name="margin_pics">6dp</dimen>
 </resources>

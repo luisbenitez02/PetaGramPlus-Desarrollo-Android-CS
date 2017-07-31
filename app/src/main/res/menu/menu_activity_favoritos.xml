@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/mAbout"
+        android:title="@string/menu_About"
+        android:orderInCategory="2"></item>
+    <!--orderInCategory orden de los elementos en la vista-->
+
+    <item android:id="@+id/mContact"
+        android:title="@string/menu_contacto"
+        android:orderInCategory="1"></item>
+
+
+    <!--app:showAsAction="always" define que este item aparezca como action view-->
+</menu>

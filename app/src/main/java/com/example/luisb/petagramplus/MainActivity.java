@@ -1,40 +1,65 @@
 package com.example.luisb.petagramplus;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
-import com.example.luisb.petagramplus.adaptador.MascotaAdaptador;
-import com.example.luisb.petagramplus.pojo.Mascota;
+import com.example.luisb.petagramplus.adaptador.PageAdapter;
+import com.example.luisb.petagramplus.fragment.PerfilFragment;
+import com.example.luisb.petagramplus.fragment.RecyclerViewFragment;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Mascota> mascotas;
-    private RecyclerView rvMascotas;
+    private Toolbar miToolbar;
+    private TabLayout miTabLayout;
+    private ViewPager miViewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rvMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
+        //relacionamos nuestros elementos de la vista con las variables
+        miToolbar = (Toolbar) findViewById(R.id.miToolbar);
+        setSupportActionBar(miToolbar);
+        getSupportActionBar().setLogo(R.drawable.huella);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        //mostramos elementos del recyclerview en una lista
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        miTabLayout = (TabLayout) findViewById(R.id.miTabLayout);
+        miViewPager = (ViewPager) findViewById(R.id.miViewPager);
 
-        rvMascotas.setLayoutManager(llm);//le entrego el layout a mi lista
+        setUpViewPager();
 
-        inicializarListaMascotas();
+        if (miToolbar != null){
+            setSupportActionBar(miToolbar);
+        }
 
-        inicializarAdaptador();
+        //boton camarita
+        FloatingActionButton pic = (FloatingActionButton) findViewById(R.id.picFlotante);
+
+        /*
+        * Al boton ser pulsado llamara a este metodo
+        * */
+
+        pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Me toco",Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
     }
 
@@ -73,29 +98,28 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*Para inicializar nuestro adaptador
-        * Tomara el menu que creamos y lo inflara en la vista*/
-    public  void inicializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
-        rvMascotas.setAdapter(adaptador);
+    /*Va a poner en orbita los fragments, vamos a asignarlos y añadirlos
+    * NOTA: debemos pasarle este arraylist al page adapter*/
+    private ArrayList<Fragment> agregarFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+
+        //vamos a agregar el fragmetn recycler view
+        fragments.add(new RecyclerViewFragment());//primer tab
+        fragments.add(new PerfilFragment());//segundo tab
+
+        return fragments;
     }
 
-    /*llenado de nuestros objetos mascota*/
-    public void inicializarListaMascotas(){
+    private void setUpViewPager(){
+        //aqui le vamos a pasar la lista de fragments al page adapter
+        miViewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
 
-        mascotas = new ArrayList<Mascota>();
+        //agregamos el viewpager al tablayout
+        miTabLayout.setupWithViewPager(miViewPager);
 
-        mascotas.add(new Mascota("Katty","5",R.drawable.pet1));
-        mascotas.add(new Mascota("Lola","4",R.drawable.pet9));
-        mascotas.add(new Mascota("Pepita","10",R.drawable.pet7));
-        mascotas.add(new Mascota("Paco","2",R.drawable.pet5));
-        mascotas.add(new Mascota("Redd","15",R.drawable.pet10));
-        mascotas.add(new Mascota("Max","8",R.drawable.pet8));
-        mascotas.add(new Mascota("Vaquishu","6",R.drawable.pet4));
-        mascotas.add(new Mascota("Maite","11",R.drawable.pet6));
-        mascotas.add(new Mascota("Pirlo","9",R.drawable.pet2));
-        mascotas.add(new Mascota("Dani","12",R.drawable.pet3));
-        mascotas.add(new Mascota("Yaya","28",R.drawable.pet11));
+        miTabLayout.getTabAt(0).setIcon(R.drawable.ic_action_name);//icono de tab1
+        miTabLayout.getTabAt(1).setIcon(R.drawable.ic_profile);
 
     }
+
 }

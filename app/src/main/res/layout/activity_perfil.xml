@@ -4,15 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context="com.example.luisb.petagramplus.PerfilActivity"
-    android:orientation="vertical"
-    android:paddingEnd="@dimen/radius_cv"
-    android:paddingStart="@dimen/radius_cv">
+    android:orientation="vertical">
+
+    <include android:id="@+id/miToolbar"
+        layout="@layout/mitoolbar">
+
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/radius_cv"
+        android:layout_marginEnd="@dimen/radius_cv">
 
     <com.mikhaellopez.circularimageview.CircularImageView
         android:layout_marginTop="@dimen/radius_cv"
@@ -454,7 +465,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
             android:textStyle="italic" />
     </LinearLayout>
-
+    </LinearLayout>
 
 </LinearLayout>
     </ScrollView>

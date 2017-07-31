@@ -7,6 +7,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.luisb.petagramplus.ContactoActivity">
 
+    <include android:id="@+id/miToolbar"
+        layout="@layout/mitoolbar">
+
+    </include>
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,15 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--CoordinatorLayout: Necesario para el elemento ViewPager, tambien permite crear animaciones, vistas bonitas y mas.
+
+Para agregarlo necesito una lib adicional (o crear un activity blank) la support design-->
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.luisb.petagramplus.MainActivity">
 
-    <!--Mi recycler view para las cardViews-->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvMascotas"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
-</RelativeLayout>
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <include
+            android:id="@+id/miToolbar"
+            layout="@layout/mitoolbar">
+
+        </include>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/miTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.design.widget.TabLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!--la vista de contenido-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/miViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!--aqui se van a contener nuestros fragments-->
+
+    </android.support.v4.view.ViewPager>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/picFlotante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/camera"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/margin_float"
+        android:layout_marginEnd="@dimen/margin_float"/>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

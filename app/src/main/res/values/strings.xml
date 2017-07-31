@@ -47,4 +47,14 @@
     <string name="bcp_3">Desarrollo HTML5 (Apps.co, UNAD, Platzi)</string>
     <string name="c_1">Desarrollo con Node.js (MiriadaX)</string>
     <string name="c_2">Carrera de programacion en Android (coursera)</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="perfil_panda">Yaya</string>
+
+    <!--Titulos appbar-->
+    <string name="contacto">Contacto</string>
+    <string name="favoritos">Favortios</string>
+    <string name="perfil">Perfil</string>
 </resources>
