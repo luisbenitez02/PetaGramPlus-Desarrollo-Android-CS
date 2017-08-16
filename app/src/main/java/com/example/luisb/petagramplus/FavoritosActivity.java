@@ -86,7 +86,7 @@ public class FavoritosActivity extends AppCompatActivity {
     /*Para inicializar nuestro adaptador
         * Tomara el menu que creamos y lo inflara en la vista*/
     public  void inicializarAdapter(){
-        MascotaAdaptador adapter = new MascotaAdaptador(favMascotas);
+        MascotaAdaptador adapter = new MascotaAdaptador(favMascotas,this);
         rvFavMascotas.setAdapter(adapter);
     }
 
@@ -94,11 +94,11 @@ public class FavoritosActivity extends AppCompatActivity {
 
         favMascotas = new ArrayList<Mascota>();
 
-        favMascotas.add(new Mascota("Vaquishu","6",R.drawable.pet4));
-        favMascotas.add(new Mascota("Maite","11",R.drawable.pet6));
-        favMascotas.add(new Mascota("Pirlo","9",R.drawable.pet2));
-        favMascotas.add(new Mascota("Dani","12",R.drawable.pet3));
-        favMascotas.add(new Mascota("Yaya","28",R.drawable.pet11));
+        favMascotas.add(new Mascota("Vaquishu",6,R.drawable.pet4));
+        favMascotas.add(new Mascota("Maite",11,R.drawable.pet6));
+        favMascotas.add(new Mascota("Pirlo",9,R.drawable.pet2));
+        favMascotas.add(new Mascota("Dani",12,R.drawable.pet3));
+        favMascotas.add(new Mascota("Yaya",28,R.drawable.pet11));
 
     }
 }

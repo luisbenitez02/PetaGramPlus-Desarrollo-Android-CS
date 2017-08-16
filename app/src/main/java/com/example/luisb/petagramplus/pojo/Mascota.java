@@ -5,14 +5,27 @@ package com.example.luisb.petagramplus.pojo;
  */
 
 public class Mascota {
+    private int id;//para la base de datos NO usado en el constructor
     private String nombre;
-    private String likes;
+    private int likes;
     private int foto;
 
-    public Mascota(String nombre, String likes, int foto) {
+    public Mascota( String nombre, int likes, int foto) {
         this.nombre = nombre;
         this.likes = likes;
         this.foto = foto;
+    }
+
+    public Mascota() {
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -23,11 +36,11 @@ public class Mascota {
         this.nombre = nombre;
     }
 
-    public String getLikes() {
+    public int getLikes() {
         return likes;
     }
 
-    public void setLikes(String likes) {
+    public void setLikes(int likes) {
         this.likes = likes;
     }
 

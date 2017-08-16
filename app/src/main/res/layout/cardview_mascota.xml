@@ -27,6 +27,8 @@
             android:paddingBottom="@dimen/padding_revl"
             android:paddingTop="@dimen/padding_revl">
 
+
+
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/imgHueso"
                 android:layout_width="@dimen/size_hueso"
@@ -48,7 +50,7 @@
 
             <!--parte del huesito dorado-->
             <TextView
-                android:id="@+id/tvContador"
+                android:id="@+id/tvLikes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/imgContador"

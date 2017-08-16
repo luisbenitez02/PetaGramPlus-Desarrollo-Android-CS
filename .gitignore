@@ -7,3 +7,9 @@
 /build
 /captures
 .externalNativeBuild
+app/src/main/res/drawable-hdpi/dsdsds.png
+app/src/main/res/drawable-ldpi/dsdsds.png
+app/src/main/res/drawable-mdpi/dsdsds.png
+app/src/main/res/drawable-xhdpi/dsdsds.png
+app/src/main/res/drawable-xxhdpi/dsdsds.png
+app/src/main/res/drawable-xxxhdpi/dsdsds.png
