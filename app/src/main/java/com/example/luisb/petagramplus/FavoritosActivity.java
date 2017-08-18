@@ -1,7 +1,7 @@
 package com.example.luisb.petagramplus;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.luisb.petagramplus.adaptador.MascotaAdaptador;
+import com.example.luisb.petagramplus.db.BaseDatos;
 import com.example.luisb.petagramplus.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -23,6 +24,9 @@ public class FavoritosActivity extends AppCompatActivity {
     ArrayList<Mascota> favMascotas;//crearemos solo 5 mascotas
     private RecyclerView rvFavMascotas;
     private Toolbar miToolbar;
+    public MascotaAdaptador adaptador;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,20 +42,18 @@ public class FavoritosActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle(getResources().getString(R.string.favoritos));
 
+        //---------------------
+        rvFavMascotas = (RecyclerView) findViewById(R.id.rvFavMascotas);
 
-
-        /*nuestro recyclerView*/
-        rvFavMascotas = (RecyclerView) findViewById(R.id.rvFavMascotas);//le paso mi nuevo recycler
-
-        //mostramos elementos del recyclerview en una lista
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
         rvFavMascotas.setLayoutManager(llm);//le entrego el layout a mi lista
 
-        inicializarListaFavMascotas();
+        favMascotas = inicializarListaMascotasFav();
 
-        inicializarAdapter();
+        inicializarAdaptador();
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -82,15 +84,18 @@ public class FavoritosActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /*Va a poner en orbita los fragments, vamos a asignarlos y añadirlos
+* NOTA: debemos pasarle este arraylist al page adapter*/
+
 
     /*Para inicializar nuestro adaptador
         * Tomara el menu que creamos y lo inflara en la vista*/
-    public  void inicializarAdapter(){
+    /*public  void inicializarAdapter(){
         MascotaAdaptador adapter = new MascotaAdaptador(favMascotas,this);
         rvFavMascotas.setAdapter(adapter);
-    }
+    }*/
 
-    public void inicializarListaFavMascotas(){
+   /* public void inicializarListaFavMascotas(){
 
         favMascotas = new ArrayList<Mascota>();
 
@@ -100,5 +105,17 @@ public class FavoritosActivity extends AppCompatActivity {
         favMascotas.add(new Mascota("Dani",12,R.drawable.pet3));
         favMascotas.add(new Mascota("Yaya",28,R.drawable.pet11));
 
+    }*/
+   public ArrayList<Mascota> inicializarListaMascotasFav(){
+       BaseDatos db = new BaseDatos(this);
+       return db.obtenerTopMascotas();
+
+   }
+
+    private void inicializarAdaptador() {
+        adaptador = new MascotaAdaptador(favMascotas, this);
+        rvFavMascotas.setAdapter(adaptador);
+
     }
+
 }

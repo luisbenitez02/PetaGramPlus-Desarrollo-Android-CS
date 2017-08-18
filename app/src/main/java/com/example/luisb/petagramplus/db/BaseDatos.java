@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.luisb.petagramplus.R;
 import com.example.luisb.petagramplus.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -46,6 +47,83 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         db.execSQL(queryCrearTablaLikes);//ejecutamos consulta
 
+        //----Insertamos los datos solo cuando se crea la tabla (codigo de prueba)
+        db.beginTransaction();
+        /*Insertamos los datos en la BD*/
+        try{
+
+            ContentValues cV = new ContentValues();
+
+            cV.put(ConstantesBD.TB_PET_NAME,"Katty");
+            cV.put(ConstantesBD.TB_PET_PHOTO, R.drawable.pet1);
+
+            db.insert(ConstantesBD.TB_PET, null, cV);
+
+            cV.put(ConstantesBD.TB_PET_NAME,"Lola");
+            cV.put(ConstantesBD.TB_PET_PHOTO,R.drawable.pet9);
+
+            db.insert(ConstantesBD.TB_PET, null, cV);
+
+
+            cV.put(ConstantesBD.TB_PET_NAME,"Pepita");
+            cV.put(ConstantesBD.TB_PET_PHOTO,R.drawable.pet7);
+
+            db.insert(ConstantesBD.TB_PET, null, cV);
+
+
+            cV.put(ConstantesBD.TB_PET_NAME,"Paco");
+            cV.put(ConstantesBD.TB_PET_PHOTO,R.drawable.pet5);
+
+            db.insert(ConstantesBD.TB_PET, null, cV);
+
+
+
+            cV.put(ConstantesBD.TB_PET_NAME,"Redd");
+            cV.put(ConstantesBD.TB_PET_PHOTO,R.drawable.pet10);
+
+            db.insert(ConstantesBD.TB_PET, null, cV);
+
+
+            cV.put(ConstantesBD.TB_PET_NAME,"Max");
+            cV.put(ConstantesBD.TB_PET_PHOTO,R.drawable.pet8);
+
+            db.insert(ConstantesBD.TB_PET, null, cV);
+
+
+            cV.put(ConstantesBD.TB_PET_NAME,"Vaquishu");
+            cV.put(ConstantesBD.TB_PET_PHOTO,R.drawable.pet4);
+
+            db.insert(ConstantesBD.TB_PET, null, cV);
+
+
+            cV.put(ConstantesBD.TB_PET_NAME,"Maite");
+            cV.put(ConstantesBD.TB_PET_PHOTO,R.drawable.pet6);
+
+            db.insert(ConstantesBD.TB_PET, null, cV);
+
+
+            cV.put(ConstantesBD.TB_PET_NAME,"Pirlo");
+            cV.put(ConstantesBD.TB_PET_PHOTO,R.drawable.pet2);
+
+            db.insert(ConstantesBD.TB_PET, null, cV);
+
+
+            cV.put(ConstantesBD.TB_PET_NAME,"Dani");
+            cV.put(ConstantesBD.TB_PET_PHOTO,R.drawable.pet3);
+
+            db.insert(ConstantesBD.TB_PET, null, cV);
+
+
+            cV.put(ConstantesBD.TB_PET_NAME,"Yaya");
+            cV.put(ConstantesBD.TB_PET_PHOTO,R.drawable.pet11);
+
+            db.insert(ConstantesBD.TB_PET, null, cV);
+
+            db.setTransactionSuccessful();
+        }
+        finally {
+            db.endTransaction();
+        }
     }
 
     @Override
@@ -90,10 +168,42 @@ public class BaseDatos extends SQLiteOpenHelper {
         return mascotas;
     }
 
-    public void insertarMascotas(ContentValues contentValues){
+    /*
+    * Obtenemos el Top 5 de las mascotas a que les hemos dado me gusta
+    * */
+    public ArrayList<Mascota> obtenerTopMascotas(){
+        ArrayList<Mascota> favMascotas = new ArrayList<>();
+        //la m representa el nombre de la tabla = mascotas
+        //la lm representa el nombre de la tabla = mascota_likes
+        //seguidos del punto los nombres de los campos
+        String query = "SELECT m.id, m.nombre, m.foto, SUM(lm.numero_likes) LIKES FROM mascota m, mascota_likes lm " +
+                "WHERE m.id = lm.id_mascota GROUP BY m.id ORDER BY LIKES DESC";
+
         SQLiteDatabase db = this.getWritableDatabase();
-        db.insert(ConstantesBD.TB_PET, null, contentValues);
+        Cursor registros = db.rawQuery(query, null);
+
+        int i=0;
+        while (registros.moveToNext()){
+           Mascota mascotaActual = new Mascota();
+
+           mascotaActual.setId(registros.getInt(0));
+           mascotaActual.setNombre(registros.getString(1));
+           mascotaActual.setFoto(registros.getInt(2));
+           mascotaActual.setLikes(registros.getInt(3));
+
+            i++;
+
+            if (i==6){
+                break;
+            }
+
+            favMascotas.add(mascotaActual);
+
+        }
+
         db.close();
+
+        return favMascotas;
     }
 
     /*Este metodo va a estar insertando un contacto en la tabla likes*/
@@ -120,4 +230,5 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         return likes;
     }
+
 }
